@@ -89,11 +89,10 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
-    padding: 10px 0px;
+    padding: 7px 0px;
 
     p {
       text-align: center;
-      font-size: 1.2rem;
     }
   }
 }

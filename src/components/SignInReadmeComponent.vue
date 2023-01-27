@@ -1,7 +1,7 @@
 <template>
   <div class="buttons-container">
-    <button id="playButton">Play !</button>
-    <button id="whatIsButton">What is it ?</button>
+    <button id="playButton">Play</button>
+    <button id="whatIsButton">Info</button>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ button {
   color: white;
   font-size: 2rem;
 
-  width: 200px;
+  width: 130px;
   height: 60px;
   border-radius: 10px;
 
