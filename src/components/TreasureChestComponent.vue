@@ -2,7 +2,7 @@
   <div>
     <figure>
       <img src="@/assets/img/cofre.png" alt="Treasure Chest" />
-      <figcaption>2 € pot!</figcaption>
+      <figcaption><span>2 €</span> pot!</figcaption>
     </figure>
   </div>
 </template>
@@ -15,8 +15,8 @@ export default {
 
 <style scoped lang="scss">
 figure {
-  width: 150px;
-  height: 100px;
+  width: 200px;
+  height: 150px;
   margin: 30px;
   animation: shinyEffect 2s ease-in-out forwards infinite alternate;
 
@@ -29,6 +29,10 @@ figure {
     width: 100%;
     text-align: center;
     font-size: 1.4rem;
+
+    span {
+      font-size: 2rem;
+    }
   }
 }
 

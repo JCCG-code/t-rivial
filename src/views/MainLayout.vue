@@ -7,28 +7,40 @@
     <div class="treasure-container">
       <TreasureChestComponent />
     </div>
-    <div class="match-history-container">
-      <MatchHistoryComponent />
+    <div class="sign-in-read-me-container">
+      <SignInReadmeComponent />
+    </div>
+    <div class="main-content">
+      <div class="dynamic-duo-container">
+        <DynamicDueComponent />
+      </div>
+      <div class="match-history-container">
+        <MatchHistoryComponent />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import DynamicDueComponent from "@/components/DynamicDueComponent.vue";
 import MatchHistoryComponent from "@/components/MatchHistoryComponent.vue";
+import SignInReadmeComponent from "@/components/SignInReadmeComponent.vue";
 import TreasureChestComponent from "@/components/TreasureChestComponent.vue";
 
 export default {
   name: "MainLayout",
   components: {
     TreasureChestComponent,
-    MatchHistoryComponent
+    MatchHistoryComponent,
+    DynamicDueComponent,
+    SignInReadmeComponent
   }
 };
 </script>
 
 <style scoped lang="scss">
 .main-layout {
-  height: 100vh;
+  min-height: 100vh;
 
   background-image: linear-gradient(
     135deg,
@@ -54,20 +66,45 @@ export default {
     text-shadow: 0 0 5px #000000;
   }
 }
+.sign-in-read-me-container {
+  display: flex;
+  justify-content: center;
 
+  margin: 50px 0px 20px 0px;
+}
 .treasure-container {
-  position: absolute;
   width: 100vw;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+
+  margin: -40px 0px 20px 0px;
 }
 
-.match-history-container {
-  position: relative;
-  top: 180px;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  max-width: 550px;
-  margin: 0 6%;
+  width: 100vw;
+  .match-history-container {
+    background-color: #e100ff23;
+
+    height: fit-content;
+    padding: 10px 20px;
+    margin: 50px 0px;
+    border-radius: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .main-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    .dynamic-duo-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 </style>
