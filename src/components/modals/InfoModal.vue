@@ -3,11 +3,14 @@
     <h1>Information</h1>
     <h2>¿En qué consiste?</h2>
     <p>
-      Un juego, un bote económico y un reto imposible: ganar en el 'Preguntados
-      2' al dúo dinámico. Corren los rumores por ahí de que existe una pareja
-      que no conoce la derrota en un juego de pura estrategia e intelecto. Ellos
-      fueron los encargados de meter los 2 primeros euros a un cofre que, a día
-      de hoy, contiene todo bote acumulado. La dinámica es simple:
+      Un juego, un bote económico y un reto imposible: ganar en el 'Preguntados'
+      al dúo dinámico.
+    </p>
+    <p>
+      Corren los rumores por ahí de que existe una pareja que no conoce la
+      derrota en un juego de pura estrategia e intelecto. Ellos fueron los
+      encargados de meter los 2 primeros euros a un cofre que, a día de hoy,
+      contiene todo bote acumulado. La dinámica es simple:
     </p>
     <ul>
       <li>
@@ -34,11 +37,14 @@
       </li>
       <li>
         El dúo retado (Javi y Víctor) cuenta con 3 comodines a lo largo de la
-        partida.
+        partida: repetir un intento, eliminar la mitad de las opciones y
+        reintentar una pregunta
       </li>
       <li>
         La última corona de cualquiera de los equipos se juega a desafío directo
-        contra la pareja oponente.
+        contra la pareja oponente, siempre y cuando el resultado no sea de 5-0 a
+        favor de cualquiera de los equipos, en cuyo caso se podrá obtener la
+        última corona por el procedimiento clásico de pregunta directa.
       </li>
       <li>
         La deportividad y la competitividad son esenciales en partes iguales
@@ -67,9 +73,10 @@
   background-color: #ebebeb;
 
   padding: 50px 10%;
+  margin: 0px 20px;
 
   max-width: 1000px;
-  height: 80%;
+  height: 70%;
   overflow-y: scroll;
 
   box-shadow: 0 0 10px #000000;
@@ -83,12 +90,10 @@
     margin: 20px 0px;
   }
   p {
-    font-size: 1.1rem;
     text-align: justify;
     margin: 10px 0px;
   }
   ul {
-    list-style: decimal;
     margin: 10px 0px;
 
     li {

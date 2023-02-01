@@ -1,17 +1,13 @@
 <template>
-  <div class="main-container-match">
+  <div class="main-container-queue">
     <!-- Row header -->
-    <div class="row-match row-header">
-      <p>Players</p>
-      <p>Match date</p>
-      <p>Result</p>
+    <div class="row-header">
+      <p>Matches in coming!</p>
     </div>
     <!-- Row matches from API -->
-    <div v-for="match in matches" :key="match">
+    <div v-for="queue in queueMatches" :key="queue">
       <div class="row-match">
-        <p>{{ match.player1 }} - {{ match.player2 }}</p>
-        <p>{{ match.date }}</p>
-        <p>{{ match.result }}</p>
+        <p>{{ queue.player1 }} - {{ queue.player2 }}</p>
       </div>
     </div>
   </div>
@@ -22,14 +18,14 @@ export default {
   name: "MatchHistory",
   data() {
     return {
-      matches: []
+      queueMatches: []
     };
   },
   async created() {
     await this.axios
-      .get("/match")
+      .get("/queue")
       .then((response) => {
-        console.log(response);
+        this.queueMatches = response.data.queue;
       })
       .catch((error) => {
         console.error(error);
@@ -39,27 +35,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.main-container-match {
+.main-container-queue {
   height: 215px;
   overflow-y: scroll;
   .row-header p {
-    width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    margin: 10px 0px;
+    text-align: center;
   }
   .row-match {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
     padding: 7px 0px;
 
     p {
+      font-size: 1.2rem;
       text-align: center;
     }
-  }
-}
-@media only screen and (min-width: 992px) {
-  p {
-    width: 200px;
   }
 }
 </style>

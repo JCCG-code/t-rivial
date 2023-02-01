@@ -10,6 +10,7 @@
         id="player1"
         v-model="player1_name"
         autocomplete="off"
+        required
       />
       <label for="player2">Player two name:</label>
       <input
@@ -33,10 +34,27 @@ export default {
     };
   },
   methods: {
-    handleSubmit() {
-      console.log("Sending data..");
-      console.log(this.player1_name);
-      console.log(this.player2_name);
+    async handleSubmit() {
+      await this.axios
+        .put(
+          "/queue",
+          {
+            player1: this.player1_name,
+            player2: this.player2_name
+          },
+          {
+            headers: {
+              access_token: "mondongo"
+            }
+          }
+        )
+        .then(() => {
+          alert("The dynamic duo awaits you. Prepare to die.");
+          this.$forceUpdate();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   }
 };
@@ -60,7 +78,7 @@ export default {
     margin-bottom: 20px;
   }
   form {
-    background-color: #0000002a;
+    background-color: #00000017;
 
     padding: 20px;
     border-radius: 10px;

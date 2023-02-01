@@ -1,7 +1,10 @@
 <template>
   <div class="buttons-container">
-    <button id="playButton" @click="showPlayModal = true">Play</button>
     <button id="whatIsButton" @click="showInfoModal = true">Info</button>
+    <button id="playButton" @click="showPlayModal = true">Play</button>
+    <button id="matchHistoryButton" @click="showMatchHistoryModal = true">
+      Matches
+    </button>
   </div>
   <div
     class="modal-container"
@@ -17,28 +20,39 @@
   >
     <InfoModal />
   </div>
+  <div
+    class="modal-container"
+    v-if="showMatchHistoryModal === true"
+    @click="showMatchHistoryModal = false"
+  >
+    <MatchHistoryModal />
+  </div>
 </template>
 
 <script>
 import PlayModal from "@/components/modals/PlayModal.vue";
 import InfoModal from "@/components/modals/InfoModal.vue";
+import MatchHistoryModal from "@/components/modals/MatchHistoryModal.vue";
 
 export default {
   name: "SignInReadme",
   components: {
     PlayModal,
-    InfoModal
+    InfoModal,
+    MatchHistoryModal
   },
   data() {
     return {
       showPlayModal: false,
-      showInfoModal: false
+      showInfoModal: false,
+      showMatchHistoryModal: false
     };
   },
   methods: {
     closeModals() {
       this.showPlayModal = false;
       this.showInfoModal = false;
+      this.showMatchHistoryModal = false;
     }
   }
 };
@@ -57,7 +71,7 @@ button {
   color: white;
   font-size: 2rem;
 
-  width: 130px;
+  width: 200px;
   height: 60px;
   border-radius: 10px;
 
@@ -72,9 +86,12 @@ button {
 #whatIsButton {
   background-color: rgb(102, 99, 255);
 }
+#matchHistoryButton {
+  background-color: rgb(238, 194, 0);
+}
 
 .modal-container {
-  position: absolute;
+  position: fixed;
   top: 0;
 
   background-color: #00000036;

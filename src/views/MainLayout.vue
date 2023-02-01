@@ -14,8 +14,8 @@
       <div class="dynamic-duo-container">
         <DynamicDueComponent />
       </div>
-      <div class="match-history-container">
-        <MatchHistoryComponent />
+      <div class="match-queue-container">
+        <MatchQueueComponent />
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
 
 <script>
 import DynamicDueComponent from "@/components/DynamicDueComponent.vue";
-import MatchHistoryComponent from "@/components/MatchHistoryComponent.vue";
+import MatchQueueComponent from "@/components/MatchQueueComponent.vue";
 import SignInReadmeComponent from "@/components/SignInReadmeComponent.vue";
 import TreasureChestComponent from "@/components/TreasureChestComponent.vue";
 
@@ -31,7 +31,7 @@ export default {
   name: "MainLayout",
   components: {
     TreasureChestComponent,
-    MatchHistoryComponent,
+    MatchQueueComponent,
     DynamicDueComponent,
     SignInReadmeComponent
   }
@@ -86,7 +86,7 @@ export default {
   align-items: center;
 
   width: 100vw;
-  .match-history-container {
+  .match-queue-container {
     background-color: #e100ff13;
 
     height: fit-content;
@@ -104,6 +104,9 @@ export default {
     .dynamic-duo-container {
       display: flex;
       flex-direction: column;
+    }
+    .match-queue-container {
+      width: 30%;
     }
   }
 }

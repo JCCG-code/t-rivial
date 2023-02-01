@@ -2,14 +2,30 @@
   <div>
     <figure>
       <img src="@/assets/img/cofre.png" alt="Treasure Chest" />
-      <figcaption><span>2 €</span> pot!</figcaption>
+      <figcaption>
+        <span>{{ amount }} €</span> pot!
+      </figcaption>
     </figure>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TreasureChest"
+  data() {
+    return {
+      amount: 0
+    };
+  },
+  async created() {
+    await this.axios
+      .get("/pot")
+      .then((response) => {
+        this.amount = response.data;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 };
 </script>
 
