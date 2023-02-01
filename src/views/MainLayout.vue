@@ -1,7 +1,7 @@
 <template>
   <div class="main-layout">
     <div class="header-container">
-      <h1>PREGUNTADOS 2</h1>
+      <h1>PREGUNTADOS</h1>
       <h1>T-CHILDREN</h1>
     </div>
     <div class="treasure-container">
@@ -87,11 +87,11 @@ export default {
 
   width: 100vw;
   .match-history-container {
-    background-color: #e100ff23;
+    background-color: #e100ff13;
 
     height: fit-content;
     padding: 10px 20px;
-    margin: 50px 0px;
+    margin: 30px 0px;
     border-radius: 20px;
   }
 }

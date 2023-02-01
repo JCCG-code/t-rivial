@@ -4,7 +4,7 @@
     <div class="portraits">
       <!-- Javier Ramirez -->
       <figure>
-        <img src="../assets/img/javier-foto.png" alt="Javier image" />
+        <img src="../assets/img/javi-foto.jpeg" alt="Javier image" />
         <figcaption>Javier Ram&iacute;rez Pulido</figcaption>
       </figure>
       <!-- Victor Diaz -->
@@ -39,9 +39,14 @@ export default {
 
     figure {
       margin: 10px;
+      max-width: 200px;
+      max-height: 200px;
 
       img {
-        width: 200px;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
         border-radius: 30px;
       }
       figcaption {

@@ -22,57 +22,18 @@ export default {
   name: "MatchHistory",
   data() {
     return {
-      matches: [
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        },
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        },
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        },
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        },
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        },
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        },
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        },
-        {
-          player1: "Player 1",
-          player2: "Player 2",
-          date: "dd/mm/yyyy",
-          result: "0 6"
-        }
-      ]
+      matches: []
     };
+  },
+  async created() {
+    await this.axios
+      .get("/match")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 };
 </script>
@@ -83,7 +44,7 @@ export default {
   overflow-y: scroll;
   .row-header p {
     width: 100%;
-    text-shadow: 0 0 5px #00000070;
+    font-size: 1.2rem;
   }
   .row-match {
     display: grid;
