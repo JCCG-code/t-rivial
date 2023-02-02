@@ -1,27 +1,29 @@
 <template>
-  <div class="playModal-container" @click.stop>
-    <h1>How to play?</h1>
-    <p>You only need to fill this fields:</p>
-    <form @submit.prevent="handleSubmit">
-      <label for="player1">Player one name:</label>
-      <input
-        type="text"
-        name="player1_name"
-        id="player1"
-        v-model="player1_name"
-        autocomplete="off"
-        required
-      />
-      <label for="player2">Player two name:</label>
-      <input
-        type="text"
-        name="player2_name"
-        id="player2"
-        v-model="player2_name"
-        autocomplete="off"
-      />
-      <input type="submit" value="Send now!" />
-    </form>
+  <div class="modal-container" v-if="showModal">
+    <div class="playModal-container" @click.stop>
+      <h1>How to play?</h1>
+      <p>You only need to fill this fields:</p>
+      <form @submit.prevent="handleSubmit">
+        <label for="player1">Player one name:</label>
+        <input
+          type="text"
+          name="player1_name"
+          id="player1"
+          v-model="player1_name"
+          autocomplete="off"
+          required
+        />
+        <label for="player2">Player two name:</label>
+        <input
+          type="text"
+          name="player2_name"
+          id="player2"
+          v-model="player2_name"
+          autocomplete="off"
+        />
+        <input type="submit" value="Send now!" />
+      </form>
+    </div>
   </div>
 </template>
 
@@ -30,7 +32,8 @@ export default {
   data() {
     return {
       player1_name: "",
-      player2_name: ""
+      player2_name: "",
+      showModal: true
     };
   },
   methods: {
@@ -50,7 +53,7 @@ export default {
         )
         .then(() => {
           alert("The dynamic duo awaits you. Prepare to die.");
-          this.$forceUpdate();
+          this.showModal = false;
         })
         .catch((error) => {
           console.error(error);
@@ -61,6 +64,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: #00000036;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .playModal-container {
   background-color: #ebebeb;
   max-width: 1000px;

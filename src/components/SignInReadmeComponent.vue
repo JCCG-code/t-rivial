@@ -6,11 +6,7 @@
       Matches
     </button>
   </div>
-  <div
-    class="modal-container"
-    v-if="showPlayModal === true"
-    @click="showPlayModal = false"
-  >
+  <div v-if="showPlayModal === true" @click="showPlayModal = false">
     <PlayModal />
   </div>
   <div
